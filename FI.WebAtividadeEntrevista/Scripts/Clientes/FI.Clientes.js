@@ -8,6 +8,7 @@ $(document).ready(function () {
             data: {
                 "NOME": $(this).find("#Nome").val(),
                 "CEP": $(this).find("#CEP").val(),
+                "CPF": $(this).find("#CPF").val(),
                 "Email": $(this).find("#Email").val(),
                 "Sobrenome": $(this).find("#Sobrenome").val(),
                 "Nacionalidade": $(this).find("#Nacionalidade").val(),
@@ -22,6 +23,9 @@ $(document).ready(function () {
                     ModalDialog("Ocorreu um erro", r.responseJSON);
                 else if (r.status == 500)
                     ModalDialog("Ocorreu um erro", "Ocorreu um erro interno no servidor.");
+                else if (r.status == 600) {
+                    ModalDialog("Usuário cadastrado", "CPF já cadastrado no sistema");
+                }
             },
             success:
             function (r) {

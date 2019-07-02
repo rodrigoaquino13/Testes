@@ -18,6 +18,10 @@ namespace WebAtividadeEntrevista
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
+
+            bundles.Add(new ScriptBundle("~/bundles/jquerymask").Include(
+                      "~/Scripts/jquery.mask.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
@@ -32,6 +36,10 @@ namespace WebAtividadeEntrevista
                       "~/Scripts/Clientes/FI.ListClientes.js"));
             bundles.Add(new ScriptBundle("~/bundles/altClientes").Include(
                       "~/Scripts/Clientes/FI.AltClientes.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/global").Include(
+                      "~/Scripts/global.js",
+                      "~/Scripts/applyMask.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
