@@ -25,6 +25,7 @@ namespace WebAtividadeEntrevista.Controllers
         [HttpPost]
         public JsonResult Incluir(ClienteModel model)
         {
+
             BoCliente bo = new BoCliente();
 
             if (!this.ModelState.IsValid)
@@ -39,22 +40,33 @@ namespace WebAtividadeEntrevista.Controllers
             else
             {
 
-                model.Id = bo.Incluir(new Cliente()
+                if (bo.VerificarExistencia(model.CPF))
                 {
-                    CEP = model.CEP,
-                    Cidade = model.Cidade,
-                    Email = model.Email,
-                    Estado = model.Estado,
-                    Logradouro = model.Logradouro,
-                    Nacionalidade = model.Nacionalidade,
-                    Nome = model.Nome,
-                    Sobrenome = model.Sobrenome,
-                    CPF = model.CPF,
-                    Telefone = model.Telefone
-                });
+                    HttpStatusCodeResult result = new HttpStatusCodeResult(600);
+                    Response.StatusCode = result.StatusCode;
+                    return Json(result.StatusCode);
 
 
-                return Json("Cadastro efetuado com sucesso");
+                }              
+                else
+                {
+                    model.Id = bo.Incluir(new Cliente()
+                    {
+                        CEP = model.CEP,
+                        Cidade = model.Cidade,
+                        Email = model.Email,
+                        Estado = model.Estado,
+                        Logradouro = model.Logradouro,
+                        Nacionalidade = model.Nacionalidade,
+                        Nome = model.Nome,
+                        Sobrenome = model.Sobrenome,
+                        CPF = model.CPF,
+                        Telefone = model.Telefone
+                    });
+                    return Json("Cadastro efetuado com sucesso");
+                }
+
+                
             }
         }
 
