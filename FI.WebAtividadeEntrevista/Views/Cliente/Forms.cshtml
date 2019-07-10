@@ -102,13 +102,29 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form id="formCadastroBeneficiario" method="post"></form>
-                    @Html.Partial("__InserirBeneficiario");
-                    @*@Html.Partial("_")*@
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="Nome">Nome:</label>
+                                <input required="required" type="text" class="form-control" id="Nome" name="Nome" placeholder="Ex.: João" maxlength="50">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="CPF">CPF:</label>
+                                <input required="required" type="text" class="form-control cpfMask" id="CPF" name="CPF" placeholder="Ex.: 010.011.111-00" maxlength="14">
+                                <div id="cpf-error-message" style="display: none"><span style="color: red;">CPF inválido! Verifique e tente novamente.</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    @*<form id="formCadastroBeneficiario" method="post"></form>
+                    <div>
+                        <table id="gridBeneficiarios" class="table"></table>
+                    </div>*@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
-                </div>
+                </div>*
             </div>
         </div>
     </div>

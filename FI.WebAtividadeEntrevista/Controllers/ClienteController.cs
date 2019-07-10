@@ -125,6 +125,7 @@ namespace WebAtividadeEntrevista.Controllers
                     Nacionalidade = cliente.Nacionalidade,
                     Nome = cliente.Nome,
                     Sobrenome = cliente.Sobrenome,
+                    CPF = model.CPF,
                     Telefone = cliente.Telefone
                 };
 

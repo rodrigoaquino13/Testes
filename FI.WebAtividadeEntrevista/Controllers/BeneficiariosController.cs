@@ -11,17 +11,6 @@ namespace WebAtividadeEntrevista.Controllers
 {
     public class BeneficiariosController : Controller
     {
-        public ActionResult Index()
-        {
-            return View();
-        }
-
-
-        public ActionResult Incluir()
-        {
-            return View();
-        }
-
         [HttpPost]
         public JsonResult Incluir(BeneficiariosModel model)
         {
