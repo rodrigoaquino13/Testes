@@ -1,30 +1,36 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Web;
 
-namespace FI.AtividadeEntrevista.DML
+namespace WebAtividadeEntrevista.Models
 {
     /// <summary>
-    /// Classe de cliente que representa o registo na tabela Cliente do Banco de Dados
+    /// Classe de Modelo de Cliente
     /// </summary>
-    public class Beneficiarios
+    public class BeneficiariosModel
     {
         /// <summary>
-        /// Id
+        /// ID
         /// </summary>
         public long Id { get; set; }
 
         /// <summary>
         /// Nome
         /// </summary>
+        [Required]
         public string Nome { get; set; }
 
         /// <summary>
         /// CPF
         /// </summary>
         public string CPF { get; set; }
-        
-    }    
+
+        /// <summary>
+        /// IDCiente
+        /// </summary>
+        public long IdCliente { get; set; }
+
+    }
 }
