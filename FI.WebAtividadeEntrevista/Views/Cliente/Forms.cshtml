@@ -96,35 +96,53 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Beneficiários</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-5">
                             <div class="form-group">
                                 <label for="Nome">Nome:</label>
-                                <input required="required" type="text" class="form-control" id="Nome" name="Nome" placeholder="Ex.: João" maxlength="50">
+                                <input required="required" type="text" class="form-control" id="NomeBeneficiario" name="Nome" placeholder="Ex.: João" maxlength="50">
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-5">
                             <div class="form-group">
                                 <label for="CPF">CPF:</label>
-                                <input required="required" type="text" class="form-control cpfMask" id="CPF" name="CPF" placeholder="Ex.: 010.011.111-00" maxlength="14">
+                                <input required="required" type="text" class="form-control cpfMask" id="CPFBeneficiario" name="CPF" placeholder="Ex.: 010.011.111-00" maxlength="14">
                                 <div id="cpf-error-message" style="display: none"><span style="color: red;">CPF inválido! Verifique e tente novamente.</span></div>
                             </div>
                         </div>
+
+                        <div class="pull-right col-lg-pull-10">
+                            <button type="submit" class="btn btn-sm btn-success" id="save-button">Incluir</button>
+
+                        </div>
                     </div>
-                    @*<form id="formCadastroBeneficiario" method="post"></form>
-                    <div>
-                        <table id="gridBeneficiarios" class="table"></table>
-                    </div>*@
                 </div>
+                <div class="modal-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Nome</th>
+                                <th scope="col">CPF</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
-                </div>*
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                </div>
             </div>
         </div>
     </div>
